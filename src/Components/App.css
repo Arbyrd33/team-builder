@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.App-link {
+  color: #61dafb;
+}
+
+
+input[type=text], input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.card {
+  padding: 4%;
+  max-width: 80%;
+  border: 2px solid #75819b;
+  background-color: #d8d8d8;
+  color: #282c34;
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 1.5rem;
+  margin: 1rem 0 4rem 0;
+}
+
+.join{
+  border-top: 2px solid #d8d8d8;
+  padding-top: 2rem;
+}
