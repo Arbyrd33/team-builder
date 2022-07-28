@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import Form from "./Form";
 // import PracticeForm from "./PracticeForm";
 
-
 const teamMates = [
   {
     id: 21,
@@ -29,16 +28,31 @@ const initialFormValues = {
   role: ''
 }
 
-const updateForm = () => {
-  return;
-}
-const submitForm = () => {
-  return;
-}
-    
+ 
+
 function App() {
   const [team, setTeam] = useState(teamMates)
   const [formValues, setFormValues] = useState(initialFormValues);
+
+  const updateForm = (inputName, inputValue)=>{
+    setFormValues({ ...formValues, [inputName]: inputValue })
+  }
+  const submitForm = ()=>{
+    const newMember = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role
+    }
+
+    if (!newMember.name || !newMember.email || !newMember.role) return;
+    setTeam([...team, newMember]);
+
+
+  }
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -46,12 +60,12 @@ function App() {
       </header>
       <div className="App-body">
       <div className="card team">
-          {teamMates.map((member, i) => <p key={i}>{member.name}, {member.role}</p>)}
+          {team.map((member, i) => <p key={i}>{member.name}, {member.role}</p>)}
       </div>
       <h2 className = "join">Join The Team!</h2>
       <div className= "card form">
       <Form 
-        values = {initialFormValues}
+        values = {formValues}
         team = {team}
         update = {updateForm}
         submit = {submitForm}

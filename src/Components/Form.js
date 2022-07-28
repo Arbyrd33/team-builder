@@ -1,16 +1,21 @@
-import React, {useState} from 'react';
+
 import '../index.css';
-console.log("say what you want me to believe")
+console.log("WHY    DENY")
 
 export default function Form(props){
     const {values, update, submit} = props
 
     const onChange = (event) => {
-        return;
+        const { name, value } = event.target;
+        console.log({name,value})
+        update(name, value);
+
     }
 
     const onSubmit=evt=>{
-        return;
+        evt.preventDefault();
+        submit();
+
     }
 
 
@@ -25,7 +30,7 @@ export default function Form(props){
                 placeholder="Enter full name."
                 value={values.name}
                 onChange={onChange}
-                maxlength="120"
+                maxLength="120"
             />
             </label>
             <br/>
